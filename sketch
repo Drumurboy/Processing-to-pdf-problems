@@ -1,5 +1,9 @@
 # Processing-to-pdf-problems
-I'm fairly new to processing but I have a working sketch that I have been using as my logo for a while. I need a vector version so I can easily scale it. I have the pdf export working to the point where it outputs a pdf but the file is completely blank and I don't know what to do. Thought I would put it up so someone who knows processing could see what I'm doing wrong and give some advice!
+I'm fairly new to processing but I have a working sketch that I have been using as my logo for a while. 
+I need a vector version so I can easily scale it. I have the pdf export working to the point where it outputs a pdf 
+but the file is completely blank and I don't know what to do. 
+
+Thought I would put it up so someone who knows processing could see what I'm doing wrong and give some advice!
 
 
 import processing.pdf.*;
