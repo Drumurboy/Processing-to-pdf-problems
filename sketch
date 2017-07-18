@@ -1,0 +1,63 @@
+# Processing-to-pdf-problems
+I'm fairly new to processing but I have a working sketch that I have been using as my logo for a while. I need a vector version so I can easily scale it. I have the pdf export working to the point where it outputs a pdf but the file is completely blank and I don't know what to do. Thought I would put it up so someone who knows processing could see what I'm doing wrong and give some advice!
+
+
+import processing.pdf.*;
+
+boolean record;
+
+float r = 0;
+int csize = 2;
+int grow = 0;
+int n = 0;
+
+void setup(){
+ size (1920, 1080);
+ 
+ smooth ();
+ background(10);
+   
+
+}
+
+void draw (){
+    if (record) {
+    beginRecord(PDF, "frame-####.pdf"); 
+  }  
+  
+ translate (width/2, height/2);
+ 
+
+ fill(255);
+ rotate (r);
+ 
+ r = r + .1;
+   if (n % 89 == 0) {
+    grow = 12;
+  }
+  if (csize > 33) {
+    csize = 33;
+    grow = -6;
+  }
+  if (csize < 0) {
+    csize = 0;
+    grow = 0;
+  }
+  
+   // where the spiral starts + r / spacing 
+  ellipse (50 + r / 3.6, 50 + r / 3.6, csize / 1.2, csize / 1.2);
+  csize = csize + grow;
+  n = n + 1;
+  
+    if (record) {
+    endRecord();
+    record = false;
+  }
+}
+
+// Hit 'r' to record a single frame
+void keyPressed() {
+  if (key == 's') {
+    record = true;
+  }
+}
